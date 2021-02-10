@@ -244,8 +244,8 @@ def project(network_pkl: str, target_fname: str, outdir: str, save_video: bool, 
     # Save results.
     PIL.Image.fromarray(proj.images_uint8[0], 'RGB').save(f'{outdir}/proj.png')
     np.savez(f'{outdir}/dlatents.npz', dlatents=proj.dlatents)
-    np.save(f'{outdir}/dlatents.npz', proj.dlatents)
-    
+    np.save(f'{outdir}/dlatents.npy', proj.dlatents)
+
     if writer is not None:
         writer.close()
 
